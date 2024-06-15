@@ -1,21 +1,22 @@
-import os
+"""Módulo de Extração."""
+
 import glob
+import os
+from typing import List
 
 import pandas as pd
-
-from typing import List
 
 
 def extract_from_excel(path: str) -> List[pd.DataFrame]:
     """
-    Função para ler os arquivos de uma pasta data/input e retornar uma lista de dataframes
+    Lê arquivos e retorna um dataframe
 
     args: input_path(str): caminho da pasta com os arquivos
 
     return: lista de dataframes
 
     """
-    all_files = glob.glob(os.path.join(path, "*.xlsx"))
+    all_files = glob.glob(os.path.join(path, '*.xlsx'))
 
     dataframe_list = []
 
@@ -24,6 +25,8 @@ def extract_from_excel(path: str) -> List[pd.DataFrame]:
 
     return dataframe_list
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
+    path = "../../data/input"
     dataframe_list = extract_from_excel(path)
     print(dataframe_list)
