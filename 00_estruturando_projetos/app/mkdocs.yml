@@ -1,0 +1,21 @@
+site_name: projeto ETL
+theme:
+  name: material
+  palette:
+    primary: red
+  language: pt
+
+repo_name: "pratica_workshops_luciano_galvao"
+repo_url: "https://github.com/IHASCIONAL/pratica_workshops_luciano_galvao"
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+
