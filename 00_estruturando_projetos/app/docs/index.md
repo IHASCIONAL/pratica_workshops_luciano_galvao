@@ -1,17 +1,15 @@
-# Welcome to MkDocs
+# Workflow
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+```mermaid
 
-## Commands
+flowchart LR
+    subgraph ETL[Pipeline]
+        A(Múltiplos Arquivos Excel) --> B[Extract: extract_from_excel]
+        B --> |Gera uma lista de Dataframes| C[Transformation: concatenate_dataframes]
+        C --> |Gera um Dataframe consolidado| D[Load: converte_para_excel]
+        D --> |Salva o consolidado em Excel| E[Pasta Output: um arquivo único Excel]
+    end
+```
+# Função de transformação de dados
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+### ::: pipeline.extract.extract_from_excel
