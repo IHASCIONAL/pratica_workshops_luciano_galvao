@@ -8,3 +8,4 @@ if __name__ == '__main__':
     dataframe_list = extract_from_excel('../data/input')
     dataframe = concatenate_dataframes(dataframe_list)
     load_excel(dataframe, '../data/output', 'output')
+    print("Finalmente o CI está ok!")
